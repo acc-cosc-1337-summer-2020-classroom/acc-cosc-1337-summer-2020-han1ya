@@ -27,7 +27,7 @@ GPA 3.0
 int main() 
 {
 	string letter_grade;
-	int credit_hours, sum_credit_hours = 0, sum_credit_points = 0, int opt_out = 1;
+	int credit_hours, sum_credit_hours = 0, sum_credit_points = 0, opt_out = 1;
 
 	do
   {
@@ -38,7 +38,7 @@ int main()
 	  sum_credit_points += get_grade_points(letter_grade) * credit_hours;
 	  sum_credit_hours += credit_hours;
 
-    cout << "\nPress 1 to enter another grade, or 0 to exit.\n "
+    cout << "\nPress 1 to enter another grade, or 0 to exit.\n ";
     cin >> opt_out;
   }while(opt_out == 1);
 
