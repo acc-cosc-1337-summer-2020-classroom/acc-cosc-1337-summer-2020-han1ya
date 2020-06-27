@@ -14,6 +14,7 @@ int main()
   { 
     int position;
     std::cout<< "Enter position from 1 to 9";
+    std::cin>>position;
     tic_tac_toe.mark_board(position);
     tic_tac_toe.display_board();
 
