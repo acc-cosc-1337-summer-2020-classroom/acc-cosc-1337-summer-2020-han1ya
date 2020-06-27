@@ -32,7 +32,7 @@ std::string get_reverse_string(std::string dna)
 
   for(int i = dna.length(); i > 0; i--)
   {
-    reversed_string += dna[i];
+    reversed_string += dna[i-1];
   }
 
   return reversed_string;
@@ -55,15 +55,15 @@ std::string get_dna_complement(std::string dna)
 
   for(int i = 0; i < dna.length(); i++)
   {
-    if(dna[i] == 'A')
+    if(str[i] == 'A')
     {
       str[i] = 'T';
     }
-    else if(dna[i] == 'T')
+    else if(str[i] == 'T')
     {
       str[i] = 'A';
     }
-    else if(dna[i] == 'G')
+    else if(str[i] == 'G')
     {
       str[i] = 'C';
     }
