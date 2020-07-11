@@ -28,4 +28,125 @@ TEST_CASE("Verify game ends when the board is full")
   REQUIRE (tic_tac_toe.game_over()==false);
   tic_tac_toe.mark_board(8);
   REQUIRE (tic_tac_toe.game_over()==true);
+
+  REQUIRE(tic_tac_toe.get_winner() == "C");
+}
+TEST_CASE("Test first player set to X")
+{
+	TicTacToe tic_tac_toe;
+	tic_tac_toe.start_game("X");
+
+	REQUIRE(tic_tac_toe.get_player() == "X");
+}
+
+TEST_CASE("Test first player set to O")
+{
+	TicTacToe tic_tac_toe;
+	tic_tac_toe.start_game("O");
+
+	REQUIRE(tic_tac_toe.get_player() == "O");
+}
+
+TEST_CASE("Test win by column 1")
+{
+	TicTacToe tic_tac_toe;
+	tic_tac_toe.start_game("X");
+	tic_tac_toe.mark_board(1); 
+	tic_tac_toe.mark_board(3); 
+	tic_tac_toe.mark_board(4); 
+	tic_tac_toe.mark_board(5); 
+	tic_tac_toe.mark_board(7); 
+
+	REQUIRE(tic_tac_toe.game_over() == true);
+}
+
+TEST_CASE("Test win by column 2")
+{
+	TicTacToe tic_tac_toe;
+	tic_tac_toe.start_game("X");
+	tic_tac_toe.mark_board(2); 
+	tic_tac_toe.mark_board(3); 
+	tic_tac_toe.mark_board(5); 
+	tic_tac_toe.mark_board(4); 
+	tic_tac_toe.mark_board(8); 
+
+	REQUIRE(tic_tac_toe.game_over() == true);
+}
+
+TEST_CASE("Test win by column 3")
+{
+	TicTacToe tic_tac_toe;
+	tic_tac_toe.start_game("X");
+	tic_tac_toe.mark_board(3); 
+	tic_tac_toe.mark_board(1); 
+	tic_tac_toe.mark_board(6); 
+	tic_tac_toe.mark_board(5); 
+	tic_tac_toe.mark_board(9); 
+
+	REQUIRE(tic_tac_toe.game_over() == true);
+}
+
+TEST_CASE("Test win by row 1")
+{
+	TicTacToe tic_tac_toe;
+	tic_tac_toe.start_game("X");
+	tic_tac_toe.mark_board(1); 
+	tic_tac_toe.mark_board(7); 
+	tic_tac_toe.mark_board(2); 
+	tic_tac_toe.mark_board(9); 
+	tic_tac_toe.mark_board(3); 
+
+	REQUIRE(tic_tac_toe.game_over() == true);
+}
+
+TEST_CASE("Test win by row 2")
+{
+	TicTacToe tic_tac_toe;
+	tic_tac_toe.start_game("X");
+	tic_tac_toe.mark_board(4); 
+	tic_tac_toe.mark_board(1);
+	tic_tac_toe.mark_board(5); 
+	tic_tac_toe.mark_board(2); 
+	tic_tac_toe.mark_board(6); 
+
+	REQUIRE(tic_tac_toe.game_over() == true);
+}
+
+TEST_CASE("Test win by row 3")
+{
+	TicTacToe tic_tac_toe;
+	tic_tac_toe.start_game("X");
+	tic_tac_toe.mark_board(7); 
+	tic_tac_toe.mark_board(1); 
+	tic_tac_toe.mark_board(8); 
+	tic_tac_toe.mark_board(2);
+	tic_tac_toe.mark_board(9); 
+
+	REQUIRE(tic_tac_toe.game_over() == true);
+}
+
+TEST_CASE("Test win diagonally from top left")
+{
+	TicTacToe tic_tac_toe;
+	tic_tac_toe.start_game("X");
+	tic_tac_toe.mark_board(1);
+	tic_tac_toe.mark_board(4); 
+	tic_tac_toe.mark_board(5); 
+	tic_tac_toe.mark_board(6); 
+	tic_tac_toe.mark_board(9); 
+
+	REQUIRE(tic_tac_toe.game_over() == true);
+}
+
+TEST_CASE("Test win diagonally from bottomm left")
+{
+	TicTacToe tic_tac_toe;
+	tic_tac_toe.start_game("X");
+	tic_tac_toe.mark_board(7); 
+	tic_tac_toe.mark_board(4); 
+	tic_tac_toe.mark_board(5); 
+	tic_tac_toe.mark_board(6); 
+	tic_tac_toe.mark_board(3); 
+
+	REQUIRE(tic_tac_toe.game_over() == true);
 }

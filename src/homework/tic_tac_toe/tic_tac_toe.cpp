@@ -151,8 +151,4 @@ void TicTacToe::set_winner()
   }
 }
 
-std::string TicTacToe::get_winner()const{return winner;}
-{
-  return winner;
-}
   

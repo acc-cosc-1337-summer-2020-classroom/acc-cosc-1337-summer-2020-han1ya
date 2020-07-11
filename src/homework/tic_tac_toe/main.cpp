@@ -22,14 +22,14 @@ int main()
     do
     { 
      int position;
-     std::cout<< "Enter position from 1 to 9";
+     std::cout<< "Enter position from 1 to 9:\n";
      std::cin>>position;
      tic_tac_toe.mark_board(position);
      tic_tac_toe.display_board();
 
    }while(tic_tac_toe.game_over() == false);
 
-  std::cout << "Game over";
+  std::cout << "Game over\n";
   std::cout << "The winner is: " << tic_tac_toe.get_winner() << "\n";
 
   std::cout << "Would you like to play another game? Press y to play, or 'n' to exit.";
