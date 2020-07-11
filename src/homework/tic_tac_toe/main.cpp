@@ -12,10 +12,10 @@ int main()
        std::cout << "Enter X or O: ";
        std::cin >> player;
 
-       if(player != "X" && player != "Y")
+       if(player != "X" && player != "O")
           std::cout << "Invalid input. Try again.";
       
-    }while(player != "X" && player != "Y");
+    }while(player != "X" && player != "O");
 
   tic_tac_toe.start_game(player);
 
